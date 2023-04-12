@@ -1,23 +1,26 @@
+import React from "react";
 import Header from "./components/Header";
 import Meme from "./components/Meme";
 
 export default function App() {
-    const thingsArray = ["thing 1", "Thing 2"]
-    const cardData = thingsArray.map((item) => <p>{item}</p> )
+  const [whichNumber, setWhichNumber] = React.useState(0)
 
-    function addArray() {
-      thingsArray.push("another thing");
-      console.log(thingsArray);
-    }
+  function handleClickPlus() {
+    setWhichNumber(whichNumber + 1);
+  }
+
+  function handleClickMinus() {
+    setWhichNumber(whichNumber - 1);
+  }
+
   return (
     <>
       <Header />
       <Meme />
-      <div>
-        <button onClick={addArray}></button>
-        {cardData}</div>
+      <div>{whichNumber}
+      <button onClick={handleClickPlus}>++++</button>
+      <button onClick={handleClickMinus}>----</button>
+      </div>
     </>
   );
 }
-
-

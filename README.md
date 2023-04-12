@@ -3,3 +3,35 @@
 Following the React tutorial - https://www.youtube.com/watch?v=bMknfKXIFA8 React Course - Beginner's Tutorial for React JavaScript Library [2022].
 
 Project number 3 - Meme generator. Building a more dynamic webpage.
+
+From 5h10m - Arrays with React and complications.
+
+const thingsArray = ["Thing 1", "Thing 2"]
+    const cardData = thingsArray.map((item) => <p>{item}</p> )
+
+    function addArray() {
+      const newThingText = `Thing ${thingsArray.length + 1}`
+      thingsArray.push(newThingText);
+      console.log(thingsArray);
+    }
+
+    Example given in App.js ^^^^
+
+# Props vs State
+
+Props are similiar to parameters in a function, recieving from above and not changing. Components are not aloud to modify props - only "configuration".
+
+State - values managed by components but that change.
+
+"Immutable" = Unchanging. Props are immutable. State is mutable.
+
+useState() gives an array. Destructure.
+
+"whichNumber + 1" is better than "whichNumber++" in React. 2nd forbidden.
+
+Callback functions if you need the 'old state.' e.g.
+function subtract () {
+    setCount(prevCount => prevCount + 1)
+}
+
+Note: An arrow function - the => means return.
