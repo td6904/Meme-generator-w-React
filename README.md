@@ -29,7 +29,7 @@ useState() gives an array. Destructure.
 
 "whichNumber + 1" is better than "whichNumber++" in React. 2nd forbidden.
 
-Callback functions if you need the 'old state.' e.g.
+Callback functions if you need the 'old state.' (Best practice) e.g.
 function subtract () {
     setCount(prevCount => prevCount + 1)
 }
