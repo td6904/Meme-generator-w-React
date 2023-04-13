@@ -1,6 +1,7 @@
 # Notes
 
 ## Have to revise this section of the course!
+react-array-practice on local - from 6:14:46!
 
 Following the React tutorial - https://www.youtube.com/watch?v=bMknfKXIFA8 React Course - Beginner's Tutorial for React JavaScript Library [2022].
 
