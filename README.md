@@ -2,6 +2,8 @@
 
 API JSON data from https://api.imgflip.com/get_memes
 
+### Definitely need to go over this project.
+
 ## Have to revise this section of the course!
 react-array-practice on local - from 6:14:46!
 

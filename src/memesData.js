@@ -1,28 +1,3 @@
-// export default {
-//   success: true,
-//   data: {
-//     memes: [
-//         {
-//             id: 181913649,
-//             name: "Drake Hotline Bling",
-//             // url: "https://i.imgflip.com/30blgx.jpg",
-//             url: "https://imgs.search.brave.com/NuU8WIdkVrKaOx1oQTZd-Ek-dyTpoNQYZ6YpqyFH7Sc/rs:fit:643:225:1/g:ce/aHR0cHM6Ly90c2Ux/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC4w/OWluTVNiRmlxc1l3/Q2w0TVdaaXNBSGFG/ZCZwaWQ9QXBp",
-//             width: 1200,
-//             height: 1200,
-//             box_count: 2,
-//           },
-//           {
-//             id: 18191877430203649,
-//             name: "Two Buttons",
-//             // url: "https://i.imgflip.com/lg8my4.jpg",
-//             url: "https://imgs.search.brave.com/uDEJhp-iOviUXihLykgU3Ck6zPq-4sUQfmxkovM_BE8/rs:fit:713:225:1/g:ce/aHR0cHM6Ly90c2Uy/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5q/U0pucWg2b3hHd2pG/UUpuZk9oYjJRSGFF/NyZwaWQ9QXBp",
-//             width: 600,
-//             height: 908,
-//             box_count: 3,
-//           },
-//     ],
-//   },
-// };
 export default {
   success: true,
   data: {
