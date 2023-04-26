@@ -63,3 +63,28 @@ button {
   position: relative;
   top: 4px;
 }
+
+.main-image {
+  width: 75%;
+}
+
+.meme {
+  position: relative;
+  margin-top: 20px;
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.meme h2 {
+  position: absolute;
+color: white;
+text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;}
+
+.meme-text-top {
+  top: 8%;
+}
+
+.meme-text-bottom {
+  top: 80%;
+}
