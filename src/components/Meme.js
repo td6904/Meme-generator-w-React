@@ -15,8 +15,22 @@ export default function Meme() {
   });
 
   const [allMemes, setAllMemes] = React.useState([]);
-////////////////////////////////////////////////
-      // Without sync/await
+  ////////////////////////////////////////////////
+  // NOTE
+
+  /* 
+useEffect takes a function as its parameter. If that
+function returns something, it needs to be a cleanup
+function. Otherwise, it should return nothing. If we
+make it an async function, it automatically returns
+a promise instead of a function or nothing.
+Therefore, if you want to use async operations inside
+of useEffect, you need to define the function separately 
+inside of the callback function.*/
+
+  /////////////////////////////////////////////////
+
+  // Without sync/await
   // React.useEffect(function() {
   //   fetch(`https://api.imgflip.com/get_memes`)
   //     .then(res => res.json())
@@ -26,7 +40,7 @@ export default function Meme() {
   //     }
   // }, [])
 
-    // With it
+  // With it
   // React.useEffect(async () => {
   //     const res = await fetch(`https://api.imgflip.com/get_memes`)
   //     const data = await res.json();
@@ -35,20 +49,18 @@ export default function Meme() {
 
   // How it's written with cleanup function,
   // But don't really need it here, just writing it anyway.
-  React.useEffect(function() {
-    async function getMemes(){
-    const res = await fetch(`https://api.imgflip.com/get_memes`)
-    const data = await res.json()
-    setAllMemes(data.data.memes)
+  React.useEffect(function () {
+    async function getMemes() {
+      const res = await fetch(`https://api.imgflip.com/get_memes`);
+      const data = await res.json();
+      setAllMemes(data.data.memes);
     }
-      getMemes()
+    getMemes();
 
-      return () => {
+    return () => {};
+  }, []);
 
-      }
-  }, [])
-
-////////////////////////////////////////////////
+  ////////////////////////////////////////////////
 
   function getMemeImage() {
     // const memesArray = allMemes.data.memes;
@@ -62,13 +74,13 @@ export default function Meme() {
   }
 
   function handleChange(event) {
-    const {name, value} = event.target
-    setMeme(prevMeme => {
+    const { name, value } = event.target;
+    setMeme((prevMeme) => {
       return {
         ...prevMeme,
-        [name]: value
-      }
-    })
+        [name]: value,
+      };
+    });
   }
 
   // function handleSubmit(event) {
@@ -78,24 +90,26 @@ export default function Meme() {
   // Not needed I don't think
 
   return (
-    <div className="form">
-      <div className="inputs">
-        <input
-          className="text-bubble"
-          type="text"
-          placeholder="First piece of text..."
-          onChange={handleChange}
-          name="topText"
-          value={meme.topText}
-        />
-        <input
-          className="text-bubble"
-          type="text"
-          placeholder="... Then the second piece of text"
-          onChange={handleChange}
-          name="bottomText"
-          value={meme.bottomText}
-        />
+    <>
+      <div className="form">
+        <div className="inputs">
+          <input
+            className="text-bubble"
+            type="text"
+            placeholder="First piece of text..."
+            onChange={handleChange}
+            name="topText"
+            value={meme.topText}
+          />
+          <input
+            className="text-bubble"
+            type="text"
+            placeholder="... Then the second piece of text"
+            onChange={handleChange}
+            name="bottomText"
+            value={meme.bottomText}
+          />
+        </div>
       </div>
       <div className="submit">
         <button type="submit" onClick={getMemeImage}>
@@ -104,10 +118,10 @@ export default function Meme() {
         </button>
       </div>
       <div className="meme">
-      <img src={meme.randomImage} alt="meme" className="main-image" />
-      <h2 className="meme-text-top">{meme.topText}</h2>
-      <h2 className="meme-text-bottom">{meme.bottomText}</h2>
+        <img src={meme.randomImage} alt="meme" className="main-image" />
+        <h2 className="meme-text-top">{meme.topText}</h2>
+        <h2 className="meme-text-bottom">{meme.bottomText}</h2>
       </div>
-    </div>
+    </>
   );
 }
