@@ -1,6 +1,7 @@
 import React from "react";
 import searchMeme from "../images/will.png";
-import memesData from "../memesData.js";
+// import memesData from "../memesData.js";
+//^^Not needed after useEffct()
 
 // export default function Meme() {
 //   const [memeImage, setMemeImage] = React.useState("")
@@ -13,12 +14,27 @@ export default function Meme() {
     randomImage: "https://i.imgflip.com/30b1gx.jpg",
   });
 
-  const [allMemeImages, setAllMemeImages] = React.useState(memesData);
+  const [allMemes, setAllMemes] = React.useState([]);
+
+      // Without sync/await
+  React.useEffect(function() {
+    fetch(`https://api.imgflip.com/get_memes`)
+      .then(res => res.json())
+      .then(data => setAllMemes(data.data.memes))
+  }, [])
+
+    // With it
+  // React.useEffect(async () => {
+  //     const res = await fetch(`https://api.imgflip.com/get_memes`)
+  //     const data = await res.json();
+  //     setAllMemes(data.data.memes)
+  //   }, [])
 
   function getMemeImage() {
-    const memesArray = allMemeImages.data.memes;
-    const randomNumber = Math.floor(Math.random() * memesArray.length);
-    const url = memesArray[randomNumber].url;
+    // const memesArray = allMemes.data.memes;
+    // ^^ No longer needed after use effect
+    const randomNumber = Math.floor(Math.random() * allMemes.length);
+    const url = allMemes[randomNumber].url;
     setMeme((prevMeme) => ({
       ...prevMeme,
       randomImage: url,
@@ -66,6 +82,7 @@ export default function Meme() {
           Get a new meme image
           <img src={searchMeme} alt="will" width="20px" />
         </button>
+        <pre>{JSON.stringify(allMemes, null, 2)}</pre>
       </div>
       <div className="meme">
       <img src={meme.randomImage} alt="meme" className="main-image" />
