@@ -15,13 +15,16 @@ export default function Meme() {
   });
 
   const [allMemes, setAllMemes] = React.useState([]);
-
+////////////////////////////////////////////////
       // Without sync/await
-  React.useEffect(function() {
-    fetch(`https://api.imgflip.com/get_memes`)
-      .then(res => res.json())
-      .then(data => setAllMemes(data.data.memes))
-  }, [])
+  // React.useEffect(function() {
+  //   fetch(`https://api.imgflip.com/get_memes`)
+  //     .then(res => res.json())
+  //     .then(data => setAllMemes(data.data.memes))
+  //     return () => {
+
+  //     }
+  // }, [])
 
     // With it
   // React.useEffect(async () => {
@@ -29,6 +32,23 @@ export default function Meme() {
   //     const data = await res.json();
   //     setAllMemes(data.data.memes)
   //   }, [])
+
+  // How it's written with cleanup function,
+  // But don't really need it here, just writing it anyway.
+  React.useEffect(function() {
+    async function getMemes(){
+    const res = await fetch(`https://api.imgflip.com/get_memes`)
+    const data = await res.json()
+    setAllMemes(data.data.memes)
+    }
+      getMemes()
+
+      return () => {
+
+      }
+  }, [])
+
+////////////////////////////////////////////////
 
   function getMemeImage() {
     // const memesArray = allMemes.data.memes;
@@ -82,7 +102,6 @@ export default function Meme() {
           Get a new meme image
           <img src={searchMeme} alt="will" width="20px" />
         </button>
-        <pre>{JSON.stringify(allMemes, null, 2)}</pre>
       </div>
       <div className="meme">
       <img src={meme.randomImage} alt="meme" className="main-image" />
