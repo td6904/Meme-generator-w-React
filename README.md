@@ -1,106 +1,82 @@
-# Notes
+# Meme-generator-w-React
 
-API JSON data from https://api.imgflip.com/get_memes
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-### Definitely need to go over this project.
+# Getting Started with Create React App
 
-## Have to revise this section of the course!
-react-array-practice on local - from 6:14:46!
+## Available Scripts
+
+In the project directory, you can run:
+
+### `npm start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
+
+### `npm test`
+
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+----
+
+## About
 
 Following the React tutorial - https://www.youtube.com/watch?v=bMknfKXIFA8 React Course - Beginner's Tutorial for React JavaScript Library [2022].
 
 Project number 3 - Meme generator. Building a more dynamic webpage.
 
-From 5h10m - Arrays with React and complications.
-
-const thingsArray = ["Thing 1", "Thing 2"]
-    const cardData = thingsArray.map((item) => <p>{item}</p> )
-
-    function addArray() {
-      const newThingText = `Thing ${thingsArray.length + 1}`
-      thingsArray.push(newThingText);
-      console.log(thingsArray);
-    }
-
-    Example given in App.js ^^^^
-
-# Props vs State
-
-Props are similiar to parameters in a function, recieving from above and not changing. Components are not aloud to modify props - only "configuration".
-
-State - values managed by components but that change.
-
-"Immutable" = Unchanging. Props are immutable. State is mutable.
-
-useState() gives an array. Destructure.
-
-"whichNumber + 1" is better than "whichNumber++" in React. 2nd forbidden.
-
-Callback functions if you need the 'old state.' (Best practice) e.g.
-function subtract () {
-    setCount(prevCount => prevCount + 1)
-}
-
-Note: An arrow function - the => means return.
-
---------------------------------------------------
-Example - remember this!!:
-
-import { useState } from "react";
-import Header from "./components/Header";
-import Meme from "./components/Meme";
-
-//Ternary operator example
-//isGoingOut ? "Yes" : "No";
-
-export default function App() {
-  const [isGoingOut, setIsGoingOut] = useState(true);
-
-  function changeMind() {
-    setIsGoingOut(prevState => !prevState)
-  }
-
-  return (
-    <>
-      <Header />
-      <Meme />
-      <div>
-        <button onClick={changeMind}>Do I feel like going out tonight?</button>
-        <div>
-          <h1>{isGoingOut ? "yes" : "no"}</h1>
-        </div>
-      </div>
-    </>
-  );
-}
-
---------------------------------------------------------
-And this too:
-
-import React from "react";
-import Header from "./components/Header";
-import Meme from "./components/Meme";
-
-export default function App() {
-  const [thingsArray, setThingsArray] = React.useState(["Thing 1", " Thing 2 "] )
-    // const cardData = thingsArray.map((item) => <p>{item}</p> ) Not needed in this example.
-
-    
-    function addItem() {
-      // const newThingText = ` Thing ${thingsArray.length + 1}`
-      // thingsArray.push(newThingText); This directly modifies the array and remember not aloud to change the state directly!
-      setThingsArray(prevState => [...prevState, `Thing ${prevState.length + 1} `])
-      // Array spread [...array], really useful!!!!
-      console.log(thingsArray);
-    }
-
-  return (
-    <>
-      <Header />
-      <Meme />
-      <h1 className="things">{thingsArray}</h1>
-      <button onClick={addItem}>Click me</button>
-    </>
-  );
-}
 
