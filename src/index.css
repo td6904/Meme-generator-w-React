@@ -49,7 +49,7 @@ input {
 
 button {
   background-color: blueviolet;
-  width: 62%;
+  width: 65%;
   padding: 10px;
   color: white;
   border-radius: 6px;
@@ -98,4 +98,37 @@ button {
 .meme-text-bottom {
   bottom: 85px;
   text-align: center;
+}
+
+@media only screen and (max-width: 650px) {
+  .inputs {
+    flex-direction: column;
+  }
+
+  .form {
+    padding: 0;
+    margin: 0;
+  }
+
+  .main-image {
+    width: 100%;
+  }
+
+  .meme {
+    margin: 30px 50px;
+  }
+
+  h4 {
+    font-size: 10pt;
+    margin-left: 10px;
+    margin-right: 0;
+  }
+
+  .title-logo {
+    font-size: 12pt;
+  }
+
+  header {
+    padding-right: 10px;
+  }
 }

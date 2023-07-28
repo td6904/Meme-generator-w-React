@@ -5,8 +5,8 @@ export default function Header() {
     return (
         <header>
             <span className="logo"><img src={logo} alt="meme"  width="60px"/>
-            <h2>Meme Generator</h2></span>
-            <h4>React course - Project 3</h4>
+            <h2 className="title-logo">Meme Generator</h2></span>
+            <h4>React Course <br />Project 3</h4>
         </header>
     )
 }
