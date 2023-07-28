@@ -11,7 +11,7 @@ export default function Meme() {
   const [meme, setMeme] = React.useState({
     topText: "",
     bottomText: "",
-    randomImage: "https://i.imgflip.com/30b1gx.jpg",
+    randomImage: "https://i.imgflip.com/2reqtg.png",
   });
 
   const [allMemes, setAllMemes] = React.useState([]);
@@ -104,7 +104,7 @@ inside of the callback function.*/
           <input
             className="text-bubble"
             type="text"
-            placeholder="... Then the second piece of text"
+            placeholder="...Then the second..."
             onChange={handleChange}
             name="bottomText"
             value={meme.bottomText}
@@ -118,8 +118,8 @@ inside of the callback function.*/
         </button>
       </div>
       <div className="meme">
-        <img src={meme.randomImage} alt="meme" className="main-image" />
         <h2 className="meme-text-top">{meme.topText}</h2>
+        <img src={meme.randomImage} alt="meme" className="main-image" />
         <h2 className="meme-text-bottom">{meme.bottomText}</h2>
       </div>
     </>

@@ -27,31 +27,29 @@ header {
 }
 
 .form {
-  /* margin: 20px 30px; */
+  margin: 20px 30px;
   padding: 36px;
-  display: grid;
-  grid-template: 40px 40px / 1fr 1fr;
 }
 
 .inputs {
   display: flex;
   justify-content: space-around;
-  gap: 25%;
+  gap: 10%;
   margin: 0 auto;
-  width: 50%;
+  width: 70%;
 }
 
 input {
-  /* width: 2s9%; */
+  width: 100%;
   padding: 20px;
   border-radius: 4px;
   border: gray solid 1px;
-  margin: 0 auto;
+  margin: 20px 0;
 }
 
 button {
   background-color: blueviolet;
-  width: 75%;
+  width: 62%;
   padding: 10px;
   color: white;
   border-radius: 6px;
@@ -59,15 +57,11 @@ button {
   cursor: pointer;
   position: relative;
   top: 25%;
-  margin: 0 auto;
-  width: 100%;
 }
 
 .submit {
-  /* display: flex;
+  display: flex;
   justify-content: center;
-  align-items: baseline; */
-  grid-column: 1 / -1;
 }
 
 .submit img {
@@ -83,24 +77,25 @@ button {
 }
 
 .meme {
-  margin-top: 25px;
+  margin: 30px 150px;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .meme h2 {
-  position: absolute;
+  position: relative;
   color: white;
   text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+  z-index: 1;
+  margin: 0 20px;
+  font-size: 15pt;
 }
 
 .meme-text-top {
-  top: 375px;
-  left: 492px;
+  top: 85px;
+  text-align: center;
 }
 
 .meme-text-bottom {
-  top: 800px;
-  left: 492px;
+  bottom: 85px;
+  text-align: center;
 }
